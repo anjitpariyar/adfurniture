@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700|Raleway:400,500,600,700&display=swap');
+$primary-color:#8dc645; //green
+$secondary-color:#48C4A0; //dark
+$dark:#252525;
+$para:#666;
+
+$red:#F0584A;
+$white:#f2f2f2;
+$width:590px;
+$wid01:830px;
+$wid02:1000px;
+
+// font-family: 'Raleway', sans-serif;
+
+// font-family: 'Quicksand', sans-serif;
+
+
+// whole part
+
+// ====MAXIN=====
+
+@mixin font($oswald){
+	@if $oswald == os{
+		font-family: 'Quicksand', sans-serif;
+		font-weight: 500;
+	}
+	@else {
+		font-family: 'Raleway', sans-serif;
+	}
+
+}
+
+@mixin section-style{
+	margin: 0 auto;
+	@include responsivemin(0px){
+		padding: 18px 0;
+		width: 95%;
+	}
+
+	@include responsivemin(600px){
+		width: 576px;
+	}
+	@include responsivemin(778px){
+		width: 768px;
+		padding: 30px 0;
+
+	}
+	@include responsivemin(1002px){
+		width: 992px;
+		padding: 45px 0;
+	}
+
+	@include responsivemin(1210px){
+		width: 1200px;
+	}
+
+}
+
+@mixin image{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@mixin responsive($width){
+	@media only screen and (max-width: $width){
+		@content;
+	}
+}
+@mixin responsivemin($width){
+	@media only screen and (min-width: $width){
+		@content;
+	}
+}
+@mixin ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin button{
+	text-transform: uppercase;
+	border: none;
+	font-size: 16px;
+	padding: 13px 30px;
+	color: $dark;
+	transition: .3s ease;
+	position: relative;
+	line-height: 16px;
+	border-radius: 6px;
+	background-color: #fff;
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+	@include responsive(767.5px){
+		font-size: 14px;
+		padding: 10px 16px;
+		line-height: 14px;
+	}
+	@include responsive(600px){
+		font-size: 12px;
+		padding: 10px 16px;
+		line-height: 12px;
+	}
+	@include responsive(424px){
+		font-size: 13px;
+		padding: 10px 14px;
+		line-height: 13px;
+		border-width: 1px;
+	}
+	&:hover{
+		box-shadow: 4px 4px 2px #f0f0f0;
+		color: $red;
+	}
+	
+}
+
+@mixin section-title(){
+	font-size: 1.5rem;
+	margin: 0;
+	margin-bottom: 0px;
+	margin-bottom: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-indent: 12px;
+	color: $dark;
+	@include responsive(1002px){
+		margin-bottom: 8px;
+		font-size: 1.2rem;
+
+	}
+	@include responsive(445px){
+		margin-bottom: 4px;
+	}
+	
+	// @if $odd == odd{
+	// 	text-align: right;
+	// 	border-left: 0;
+	// 	border-right: 6px solid $primary-color;
+	// 	i{
+	// 		left: auto;
+	// 		right: 2rem;
+	// 	}
+	// }
+}
+
+@mixin card-title{
+	font-size: 14px;
+	margin: 1rem 0 0 0;
+	height: 30px;
+	overflow: hidden;
+	@include font(os);
+	@include linecamp(2);
+	
+	@include responsive(445px){
+		font-size: 12px;
+		margin-top: 6px;
+		height: 28px;
+	}
+}
+@mixin small-title{
+
+}
+@mixin price {
+	color: $red;
+	@include font(os);
+}
+
+@mixin card-details{
+	font-size: 1em;
+	line-height: 1.2em;
+}
+
+@mixin card{
+	font-size: 16px;
+}
+@mixin flaticon_before{
+	font-family: Flaticon;
+	font-size: 1.5em;
+	font-style: normal;
+	@content;
+}
+@mixin flaticon{
+	&:before{
+		margin-left: 0 !important;
+		@content;
+	}
+}
+@mixin img-height($number){
+	img{
+		@include image;
+	}
+	@if $number==4{
+		height: 320px;
+		@include responsive(1002px){
+			height: 210px;
+		}
+		@include responsive(768px){
+			height: 180px;
+		}
+		@include responsive(420px){
+			height: 120px;
+		}
+	}
+	@if $number==2{
+		height: 290px;
+		@include responsive(1002px){
+			height: 210px;
+		}
+		@include responsive(768px){
+			height: 180px;
+		}
+		@include responsive(420px){
+			height: 150px;
+		}
+	}
+}
+@mixin linecamp($line){
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+@mixin date{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 70px;
+	padding: 1rem;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	width: 72px;
+	font-size: 1.29em;
+	line-height: 1.29rem;
+	text-transform: uppercase;
+	word-break: break-all;
+	font-weight: bold;
+	color:#fff;
+	@include font(gilroy);
+	background-image: linear-gradient(260deg, rgba($secondary-color,0.6), transparent);
+	@include responsive(1001.5px){
+		font-size: 1.2em;
+		line-height: 1.2;
+		height: 60px;
+		width: 52px;
+		padding: .5em;
+	}
+	@include responsive(777.5px){
+		height: 50px;
+		width: 52px
+
+	}
+	@include responsive(420px){
+		width: 45px;
+		height: 45px;
+	}
+
+}
+@mixin feature{
+	font-size: 1em;
+	color: #787878;
+	@include font('flexa');
+	font-weight: 400;
+	@include responsive(500px){
+		font-size: 11px;
+	}
+}
+@mixin whole{
+	html{
+		font-size: 16px;
+		scroll-behavior: smooth;
+		@include responsive(589px){
+			font-size: 12px;
+		}
+	}
+
+	a:hover{
+		text-decoration: none;
+		color: currentColor;
+	}
+
+	a:active, a:focus {
+		outline: 0;
+		border: none;
+		outline-style: none;
+	}
+
+	a{
+		transition: .3s ease;
+		color: currentColor;
+	}
+
+	a:visited{
+		color: inherit;
+	}
+
+	h1,h2,h3{
+		text-transform: capitalize;
+		font-size: 3rem;
+		margin-bottom: 20px;
+		color: #000;
+		@include responsive(600px){
+			font-size: 2rem;
+		}
+
+		@include responsive(400px){
+			font-size: 1.8rem;
+		}
+	}
+
+	.logo{
+		img{
+			height: 3rem;
+		}
+	}
+
+	
+	body{
+		@include font(raleway);
+		position: relative;
+		scroll-behavior: smooth;
+		color: $dark;
+	}
+	.section-rule{
+		@include section-style;
+	}
+
+
+}
+
+@mixin paragraph{
+	text-transform: none;
+	line-height: 2rem;
+	font-size: 1em;
+}
+@mixin position{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+@mixin focus{
+	&:focus{
+		outline: none;
+		box-shadow: none;
+	}
+}
+@mixin buttonhover($color){
+	position: relative;
+	overflow: hidden;
+	&:hover{
+		background-color: $color;
+	}
+	
+}
+@mixin rest-style{
+	padding: 60px 0;
+	@include responsive(1002px){
+		padding: 30px 0;
+	}
+	@include responsive(774px){
+		
+	}
+	@include responsive(424px){
+		padding: 10px 0;
+	}
+}
+
+
+// ===ANIMATION==
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+}
+
+@include keyframes(slide-down) {
+	0% {
+		left: 0px;
+	}
+	25%{
+		left: 8px
+	}
+	50%{
+		left:0px;
+	}
+	75%{ 
+		left:-11px;
+	}
+	100%{
+		left: 0px;
+	}
+}
+
+
+
+
+// ==START==
+
+@include whole;
+input::placeholder{
+	color: $para;
+}
+.description{
+	p{
+		font-size: 1em;
+	}
+	
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	/* no standardized syntax available, no ie-friendly solution available */
+}
+$height:52px;
+
+select + i.flaticon-down-arrow {
+	float: right;
+	margin-top: 0;
+	margin-right: 0px;
+	pointer-events: none;
+	background-color:transparent;
+	color:#6666663d;
+	z-index: 99;
+	width: $height;
+	height: $height;
+	line-height: $height;
+	margin-bottom: $height;
+	position: absolute;
+	right: 0;
+	&:before{
+		font-size: 12px
+	}
+	@include responsive(1002px){
+		width:45px;
+		height:45px;
+		line-height:45px;
+		margin-bottom:45px;
+		top:0;
+	}
+	@include responsive(426px){
+		width:38px;
+		height:38px;
+		line-height:38px;
+		margin-bottom:38px;
+
+	}
+
+}
+.row{
+	margin:0;
+}
+@include responsive(480px){
+	.col-sm-6{
+		padding:0 6px !important;
+	}
+}
+
+body.mobmenu{
+	height: 100%;
+	overflow-y: hidden;
+}
+
+.allpage{
+	.description{
+		h2{
+			font-size:2em;
+			margin-bottom: 0em;
+		}
+		p{
+			margin-bottom: 0;
+			color: #444;
+		}
+		a{
+			color: $primary-color;
+			text-decoration: underline;
+			&:hover{
+				color: blue;
+			}
+			&:viisted{
+				color: purple;
+			}
+		}
+		ul{
+			padding-left: 1em;
+			line-height: 1.7;
+		}
+	}
+}
+.fixed-top{
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom:0 !important;
+	overflow-y: scroll;
+	z-index: 10000 !important;
+	padding: 1rem;
+
+}
+hr{
+	border-color: #00000036;
+	
+	@include responsive(778px){
+		margin: 4px 0px;
+	}
+}
+.section-title{
+	@include section-title;
+}
+mark {
+	background-color: $dark;
+	color: #fff;
+	padding: 3px 14px;
+}

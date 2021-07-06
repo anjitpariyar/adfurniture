@@ -1,0 +1,1394 @@
+.custombreadcrumb{
+	background-color: $primary-color;
+	box-shadow: none;
+	height: 43px;
+	line-height: 43px;
+	@include responsive(445px){
+		height: 34px;
+		line-height: 34px;
+	}
+	.section-rule{
+		padding: 0;
+		a{
+			font-size: 15px;
+			&:before{
+				margin: 0 5px 0 1px;
+				line-height: 47px;
+			}
+			@include responsive(445px){
+
+				font-size: 11px;
+				&:before{
+					margin: 0 2px 0 1px;
+					line-height: 34px;
+					font-size: 1em;
+
+				}	
+			}
+		}
+	}
+
+}
+.magnifier {
+	border: 4px solid $dark !important;
+}
+.single-page{
+	.col.s12.m6{
+		@include responsive(778px){
+			width: 100%;
+		}
+	}
+	.products-wrapper{
+		
+		.product-image{
+			position: relative;
+			@include responsive(778px){
+				margin-bottom: 2rem;
+			}
+			.item{
+				position: relative;
+				@include responsive(1001.5px){
+					height: 350px;
+					img{
+						@include image;
+					}
+				}
+				@include responsive(600px){
+					height: 240px;
+				}
+				@include responsive(445px){
+					height: 200px;
+				}
+			}
+
+			.owl-nav {
+				position: absolute;
+				top: 45%;
+				transform: translateY(-50%);
+				width: 100%;
+				
+
+				.owl-next {
+					right: -5px;
+					&:hover{
+						text-indent: 15px;
+					}
+				}
+				.owl-prev {
+					left: -5px;
+					&:hover{
+						text-indent: -15px;
+					}
+				}
+			}
+			.owl-dots {
+				position: relative;
+				bottom: 0;
+				width: 100%;
+				left: 0;
+				background-color:$dark;
+				padding: 6px;
+				margin: 0 !important;
+				.owl-dot{
+					span{
+						height: 11px;
+						width: 11px;
+						opacity: 1;
+						background-color: #fff;
+						transition: .3s ease;
+						counter-increment: owl-dot;
+						content:counter(owl-dot);
+					}
+					&.active, &:hover{
+						span{
+							transform: scale(1.5);
+							background: #FFF;
+						}
+					}
+				}
+			}
+		}
+
+		.wrapper{
+			font-size: 16px;
+			@include responsive(445px){
+				font-size: 13px;
+			}
+			
+			.section-title{
+				text-indent: 0;
+				margin-bottom: 0;
+			}
+			.small-title{
+				font-size: 1em;
+				color: #666;
+				margin: 0;
+			}
+			.price{
+				@include price;
+				font-size: 2em;
+				margin: 12px 0;
+				span{
+					color: #888;
+					text-decoration: line-through;
+					margin-left: 4px;
+				}
+				@include responsive(600px){
+					margin: 0;
+				}
+			}
+			.stocks{
+				text-transform: capitalize;
+				font-size: 1.1em;
+				margin: 0;
+				span{
+					font-weight: bold;
+					color: $dark;
+					margin-right: 4px;
+				}
+			}
+			.share{
+				display: flex;
+				align-items: center;
+				p{
+					text-transform: initial;
+					transform: translateY(3px);
+					margin-right: 10px;
+				}
+			}
+			.description{
+				p{
+					@include linecamp(4);
+					line-height: 1.7;
+					color: #444;
+					@include responsive(445px){
+						margin: 3px 0;
+					}
+				}
+			}
+			.button{
+				button{
+					@include button;
+					&:not(.buynow){
+						background-color: $dark;
+						color: #fff;
+						svg{
+							height: 1em;
+						}
+
+					}
+					&.buynow{
+						border: 2px solid $dark;
+						margin-left: 2rem;
+						@include responsive(1002px){
+							margin-left: 1rem;
+						}
+					}
+					&:hover{
+						color: $red;
+						svg{
+							path{
+
+								fill: $red;
+							}
+						}
+					}
+
+
+				}
+			}
+			.form{
+				display: flex;
+				align-items: baseline;
+				margin-bottom: 12px;
+
+				label {
+					font-size: 1rem;
+					color: #252525;
+					font-weight: bold;
+					display: block;
+				}
+				input{
+					width: 50px;
+					margin-left: 2rem;
+					border: 1px solid #313131;
+					border-radius: 6px;
+					padding: 0px 15px;
+					height: 40px;
+					@include responsive(445px){
+						height: 32px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.spcnrev{
+	font-size: 16px;
+	@include responsive(445px){
+		font-size: 13px;
+	}
+	.headnav{
+		position: sticky;
+		top: 75px;
+		z-index: 99;
+		@include responsive(778px){
+			top: 0;
+		}
+		@extend .custombreadcrumb;
+		a{
+			color: #fff;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+	
+	.description{
+		background-color: $white;
+		.title{
+			color: $dark;
+			margin-top: 0;
+			font-size: 1.3em;
+			font-weight: 600;
+			margin-bottom: 6px;
+			@include responsive(569px){
+				margin-bottom: 0;
+			}
+		}
+		ul,li{
+			font-size: 1em;
+			list-style: initial;
+			list-style-type: circle !important;
+			&::marker{
+				border-color: $dark;
+				color: $dark;
+			}
+		}
+		ul,p{
+			margin-top: 0;
+			color: #666;
+		}
+	}
+	.reviews{
+		font-size: 16px;
+		@include responsive(445px){
+			font-size: 13px;
+		}
+		background-color: #fff;
+		.card-panel{
+			border-radius: 0px;
+			box-shadow: 0px 3px 10px #00000017;
+			padding: 1em;
+			&.form{
+				.name{
+					color: $primary-color;
+				}
+			}
+		}
+		.description{
+			background-color: transparent;
+			p{
+				margin-bottom: 0;
+			}
+		}
+		.name{
+			margin: 0;
+			font-size: 1.3em;
+			font-weight: 600;
+			color: $dark;
+		}
+		.date{
+			color: #888;
+			font-size: .9em;
+			margin-bottom: 10px;
+		}
+		.title{
+			color: #666;
+			font-size: 1em;
+			font-weight: 500;
+		}
+
+		form{
+			.input-field{
+				margin-bottom: 0;
+				@include responsive(445px){
+					margin: 3 0px;
+				}
+			}
+			::placeholder{
+				color: $dark;
+				opacity: 1;
+			}
+			input, textarea{
+				border: 1px solid $dark;
+				text-indent: 1em;
+				color: $dark;
+			}
+			textarea{
+				height: 120px;
+				@include responsive(445px){
+					height: 80px;
+				}
+			}
+			input[type=submit]{
+				@include button;
+				background-color: $primary-color;
+				text-indent: 0;
+				height: auto;
+				width: 100%;
+				color: #fff;
+				border-radius: 0;
+				box-shadow: none;
+				&:hover{
+					color: #fff;
+				}
+			}
+
+		}
+	}
+}
+
+.pagination {
+	@include font(os);
+	li.active {
+		background-color: #252525;
+	}
+}
+th{
+	@include responsive(486px){
+		max-width: 65px;
+	}
+
+}
+
+// all categories page
+
+
+
+.allcategories-page, .categories-page{
+	aside.col{
+		li.hassubmenu > a:hover{
+			cursor: text !important;
+		}
+		@include responsive (1002px){
+			width: 100% !important;
+			position: static;
+			display: block;
+			padding: 0 12px!important;
+
+		}
+		li.hassubmenu{
+			@include responsive(450px){
+				width: 45%;
+			}
+		}
+		.main{
+			@include responsive (1002px){
+				font-size: 14px;
+				display: flex;
+				flex-wrap: wrap;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				justify-content: flex-start;
+				margin-bottom: 1.5em;
+				li:first-child, li {
+					margin:12px;
+					a {
+						padding: 14px 2em;
+					}
+				}
+				.submenu li{
+					margin-left: 0;
+					margin-right: 0;
+					a {
+						padding: 0px 2em;
+					}
+				} 
+			}
+			@include responsive (476px){
+				font-size: 12px;
+				li:first-child, li {
+					margin:7px;
+					a{
+						padding: 10px 18px;
+					}
+				}
+				.submenu{
+					li{
+						&:first-child{
+							margin: 7px 0;
+						}
+						a{
+							padding: 0 18px !important;
+						}
+					}
+					
+				}	
+			}
+
+		}
+
+	}
+
+
+	
+} 
+
+
+.allcategories-page{
+	.category{
+		li.hassubmenu {
+			.submenu{
+				display: block;
+			}
+		}	
+	}
+}
+
+
+.categories-page{
+	margin-top: 2.5rem;
+	@include responsive(600px){
+		margin-top: 8px;
+	}
+	.home{
+		.item{
+			.text{
+				button{
+					@include button;
+				}
+			}
+		}
+	}
+	.category{
+		.card-panel{
+			font-size: 16px;
+			padding: 0;
+			box-shadow: 0 0 10px #00000017;
+			@include responsive(485px){
+				font-size: 13px;
+			}
+			.card-title {
+				font-size: 1.1em;
+				font-weight: 500;
+				margin: 0;
+				background-color: #4c4c4c;
+				color: #fff;
+				padding: 12px 1em;
+				text-transform: capitalize;
+				@include responsive(1002px){
+					padding: 8px;
+				}
+			}
+			.card-content{
+				padding: 12px 1em;
+				@include responsive(1002px){
+					padding: 8px;
+				}
+				button{
+					@include button;
+					background-color: $primary-color;
+					color: #fff;
+					&:hover{
+						color: #fff;
+					}
+				}
+
+
+			}
+			.title{
+				@include card-title;
+				text-transform: capitalize;
+				font-size: 1em;
+				text-transform: capitalize;
+				margin: 0;
+				color: $dark;
+			}
+			ul{
+				margin: 0;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: baseline;
+				li, li:first-child{
+					background-color: #f9f9f9;
+					box-shadow: 0 0 10px #00000017;
+					transition: none;
+					a{
+						padding: 10px 1.2em;
+						font-size: .9em;
+						transition: none !important;
+						span{
+							color: #888;
+						}
+						@include responsive(1002px){
+							padding:8px 1em;
+						}
+						
+					}
+					margin: 8px 4px;
+					&.active, &:hover{
+						background-color: $primary-color;
+						color: #fff;
+						a{
+							span{
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+			.price{
+				@include price;
+				text-transform: capitalize;
+				color: $dark;
+				font-weight: 500;
+				span{
+					color: #666;
+
+				}
+				margin-top: 0;
+			}
+			@include responsive(1002px){
+				width: 100%;
+				margin-right: 12px;
+				max-width: 340px;
+			}
+			@include responsive(670px){
+				margin-right: 0
+			}
+		}
+	}
+	#range{
+		margin: 3.5em 0 2em 0;
+		&.noUi-horizontal {
+			height: 10px;
+		}
+		.noUi-connect {
+			background: $primary-color;
+		}
+		.noUi-handle {
+			width: 30px;
+			height: 30px;
+			right: -17px;
+			top: -11px;
+			border-radius: 11px;
+		}
+		.noUi-tooltip{
+			@include responsive(445px){
+				font-size: 10px;
+			}
+		}
+	}
+	.main{
+		@include responsive(1002px){
+			justify-content: center !important;
+		}
+	}
+	.cate{
+
+		&> .row{
+			@include responsive (835px){
+				display: flex;
+				flex-wrap: wrap;
+			}
+			aside:first-child{
+				@include responsive (835px){
+					order: 1;
+				}
+			}
+		}
+	}
+}
+
+.search-page{
+	.item{
+		.img{
+
+		}
+		.search{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 2;
+			width: 80%;
+			max-width: 700px;
+			@include responsive(420px){
+				.row .col.s9{
+					width: 64%;
+				}
+			}
+			input[type=text]{
+				background-color: $white;
+				border-radius: 8px;
+				border: none;
+				color: $dark;
+				text-indent: 20px;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				height: 49px !important;
+				@include responsive(556px){
+					height: 42px !important;
+				}
+				@include responsive(400px){
+					height: 36px !important;
+				}
+			}
+
+			input[type=submit], button{
+				@include button;
+				background-color: $dark;
+				color: #fff;
+				i{
+					display: none;
+				}
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				padding: 0 2em !important;
+				height: 49px !important;
+				@include responsive(556px){
+					height: 42px !important;
+				}
+				@include responsive(400px){
+					height: 36px !important;
+				}
+
+			}
+			.col{
+				padding: 0 !important;
+			}
+		}
+	}		
+}
+
+// login
+.login{
+	.card.horizontal{
+		.card-image{
+			max-width: 80%;
+			height: 553px;
+			width: 50%;
+			transition: .3s ease;
+			img{
+				@include image;
+			}
+			&.show{
+				height: 693px;
+			}
+			@include responsive(778px){
+				display: none;
+			}
+		}
+		.card-content{
+			.input-field{
+				margin: 12px 0;
+				@include responsive(475px){
+					margin: 4px 0;
+				}
+			}
+			input{
+				border: 1px solid #313131;
+				border-radius: 6px;
+				text-indent:15px;
+				height: 50px;
+				@include responsive(445px){
+					height: 40px;
+					border-color:#ddd;
+				}
+			}
+			input[type=submit], button{
+				@include button;
+				width: 100%;
+				background-color: $dark;
+				color: #fff;
+			}
+			p{
+				margin: 12px 0;
+				@include responsive(475px){
+					margin: 4px 0;
+				}
+				a{
+					color: $red;
+					text-decoration: underline;
+				}
+			}
+			p.or{
+				
+				position: relative;
+				z-index: 2;
+				&:after{
+					content: "";
+					position: absolute;
+					height: 1px;
+					background-color: rgba($dark,1);
+					width: 90%;
+					left: 5%;
+					top: 12px;
+				}
+				span{
+					background-color: #fff;
+					position: relative;
+					z-index: 2;
+					padding: 0 10px;
+				}
+			}
+			.loginwith{
+				margin: 12px 0;
+				@include responsive(475px){
+					margin: 4px 0;
+				}
+			}
+			button.google{
+				background-color: #d44235;
+				color: #fff !important;
+			}
+			button.facebook{
+				background-color: #395694;
+				color: #fff !important;
+
+
+			}
+
+			.wrapper{
+				display: none;
+			}
+		}
+		.card-stacked{
+			&.register-part{
+				display: none;
+			}
+		}
+	}
+}
+.checkout-page{
+	.card-content{
+		.input-field{
+			margin: 12px 0;
+			@include responsive(475px){
+				margin: 4px 0;
+			}
+			& > label{
+				transform: none !important;
+				position: static;
+			}
+			&.radio{
+				transform: translateY(50%);
+				@include responsive(778px){
+					transform: translateY(30%);
+				}
+				@include responsive(600px){
+					transform: translateY(0%);
+				}
+			}
+		}
+		input{
+			border: 1px solid #313131;
+			border-radius: 6px;
+			text-indent:15px;
+			height: 40px;
+			@include responsive(445px){
+				height: 32px;
+			}
+		}
+		input[type=submit], button{
+			@include button;
+			width: 100%;
+			background-color: $dark;
+			color: #fff;
+		}
+		p{
+			margin: 12px 0;
+			@include responsive(475px){
+				margin: 4px 0;
+			}
+			a{
+				color: $red;
+				text-decoration: underline;
+			}
+		}
+	}
+	form{
+		aside.proceedto{
+			@include responsive(1002px){
+				position: static !important;
+			}
+		}
+	}
+}
+
+.idea{
+	.card.horizontal .card-image {
+		height: 600px;
+	}
+	.file{
+		position: relative;
+		.bttn{
+			span{
+				display: inline-block;
+				margin-right: 8px;
+			}
+
+		}
+		input{
+			height: 0.1px;
+			width: 0.1px;
+			opacity: 0;
+			position: relative;
+			// &.active{
+			// 	label{
+			// 		background-color: $red !important;
+			// 	}
+			// }
+		}
+		label{
+			border: none !important;
+			height: auto !important;
+			@include button;
+			background-color: $red ;
+
+			color: #fff !important;
+			box-shadow: none !important;
+			// padding: 8px !important;
+			display: inline-block;
+			i{
+				font-size: inherit;
+				margin-right: 6px;
+			}
+			&.active{				
+				background-color: $primary-color !important;
+				i{
+					font-family: "Material Icons";
+					content: "\e5ca";
+				}
+			}
+		}
+	}
+}
+
+// cart-page
+.cart-page{
+	.card-panel{
+		box-shadow: 0 8px 8px #0000000d;
+		@include responsive(1001.5px){
+			padding: 11px;
+		}	
+	}
+	aside{
+		@include responsive(1001.5px){
+			width: 100% !important;
+		}
+	}
+	aside.proceedto{
+		position:sticky;
+		top: 75px;
+		font-size: 16px;
+		z-index: 9;
+		@include responsive(1001.5px){
+			top: auto;
+			// bottom: 0px;
+		}
+		@include responsive(778px){
+			.card-panel{
+				border: 2px solid $dark;
+			}
+		}
+		p{
+			margin-top: 0;
+			color: #888;
+			font-size: 13px;
+			margin-bottom: 6px;
+			i{
+				font-size: 1em;
+				margin-right: 8px;
+			}
+		}
+		h3{
+			@include card-title;
+			font-size: 1em;
+			display: flex;
+			justify-content: space-between;
+			.price{
+				@include price;
+			}
+			@include responsive(1001.5px){
+				margin: 0;
+			}
+		}
+		button{
+			@include button;
+			width: 100%;
+			background-color: $dark;
+			color: #fff;
+			margin-top: 1rem;
+			@include responsive(1001.5px){
+				margin-top: 0;
+			}
+		}
+	}
+	aside.cart{
+		font-size: 16px;
+		@include responsive(778px){
+			font-size: 13px;
+		}
+		.semi-card{
+			display: flex;
+			align-items: center;
+			.card-image{
+				margin-right: 12px;
+			}
+			img{
+				height: 85px;
+				width: auto;
+				@include responsive(778px){
+					height: 55px;
+				}
+				@include responsive(386px){
+					height: 40px;
+				}
+			}
+			h3.title{
+				@include card-title;
+				margin-top: 0;
+				max-width: 190px;
+				@include responsive(778px){
+					font-size: 12px;
+					height: 27px;
+					max-width: 120px;
+				}
+			}
+		}
+		p{
+			@include font(os);
+		}
+		p.price{
+			@include price;
+		}
+		.form{
+			input{
+				width: 50px;
+				border: 1px solid #313131;
+				border-radius: 6px;
+				padding: 0px 15px;
+				height: 40px;
+				@include responsive(778px){
+					height: 32px;
+					width: 35px;
+					padding: 0px 9px
+				}
+			}
+		}
+		a.remove{
+			color: #bbb;
+		}
+		td, th {
+			@include responsive(1001.5px){
+				padding: 10px 5px;
+			}
+			@include responsive(486px){
+				padding: 6px 0px;
+				height: 65px;
+			}
+			@include responsive(386px){
+				height: 40px;
+			}			
+		}
+
+	}
+}
+.card-panel.empty{
+	button{
+		@include button;
+		background-color: $primary-color;
+		color: #fff !important;
+	}
+	h3{
+		text-transform: initial;
+		font-weight: bold;
+		color: #00000030;
+		font-size: 3em;
+		text-align: text;
+		@include responsive(500px){
+			font-size: 1.5em;
+		}
+	}
+}
+
+// contactus page
+.contactus{
+	.card-panel{
+		box-shadow: 0 6px 8px #00000012;
+		padding: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		@include responsive(460px){
+			padding-left: 12px;
+		}
+		ul{
+			font-size: 16px;
+			@include responsive(460px){
+				font-size: 12px;
+			}
+			li{
+				font-size: 1.3em;
+				i{
+					font-size: inherit;
+					margin-right: 8px;
+				}
+				a{
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					flex-wrap: wrap;
+					word-wrap:anywhere;
+				}
+			}
+		}
+		background-color: rgba($primary-color, .8);
+		&.map{
+			height: 280px;
+			@include responsive(460px){
+				height: 180px;
+			}
+		}
+		&.mail{
+			height: 200px;
+			
+			@include responsive(1002px){
+				height: auto;
+			}
+		}
+	}
+	.card-title{
+		margin-top: 8px;
+		font-weight: 500;
+		color: $dark;
+	}
+	::placeholder{
+		color: #bbb !important;
+		opacity: 1 !important;
+	}
+	textarea{
+		border: 1px solid #313131;
+		border-radius: 6px;
+		text-indent:15px;
+		height: 120px;
+		@include responsive(445px){
+			height: 64px;
+		}
+
+	}
+}
+
+// about-us
+.about-us{
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #000000bd;
+	background-blend-mode: color;
+	.home{
+		@include responsive(450px){
+			margin-top: 8px;
+		}
+		.text{
+			position: static;
+			padding: 3rem 0;
+			h1{
+				margin: 0;
+				font-weight: bold;
+
+				mark{
+					background-color: #fff;
+					color: $dark;
+				}
+
+			}
+		}
+	}
+	.card-panel, .card{
+		overflow: hidden;
+		font-size: 16px;
+		border-radius: 12px;
+		@include responsive(1002px){
+			font-size: 13px;
+		}
+		.card-content{
+			padding: 0 1em 1em;
+		}
+		h2{
+			margin: 0;
+			font-size: 1.6em;
+			color: #313131;
+		}
+		.circle{
+			height: 220px;
+			border: 2px solid #313131c2;
+			border-radius: 12px;
+			// box-shadow: 0px 0px 14px #00000021;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			p{
+				font-size: 3em;
+				margin: 0;
+				color: #8dc645;
+				font-weight: bold;
+				@include font(os);
+			}
+			@include responsive(778.5px){
+				height: 140px;
+				p{
+					font-size: 2em;
+				}
+			}
+			@include responsive(476px){
+				height: 90px;
+				p,h2{
+					font-size: 1.2em;
+				}
+			}
+			@include responsive(400px){
+				p,h2{
+					font-size: 1em;
+				}
+			}
+		}
+	}
+	.card{
+		.card-image{
+			height: 440px;
+			width: 50%;
+			img{
+				@include image;
+			}
+			@include responsive(778px){
+				height: 300px;
+			}
+			@include responsive(600px){
+				display: none;
+			}
+		}
+		.card-stacked{
+			font-size: 16px;
+			@include responsive(778px){
+				font-size: 13px;
+			}
+			@include responsive(400px){
+				font-size: 10px;
+			}
+			h2{
+				font-size: 2em;
+				font-weight: bold;
+			}
+			ul{
+				font-size: 1.2em;
+				li{
+					margin: 8px 0;
+				}
+			}
+			.card-content{
+				padding: 2em;
+			}
+
+		}
+	}
+	.services{
+		h2, .para{
+			color: $white;
+		}
+	}
+
+}
+
+.account-page{
+	.card, .card-panel{
+		box-shadow: 0 5px 13px #00000021;
+		border-radius: 12px;
+	}
+	.profile.card{
+		font-size: 16px;
+		width: 90%;
+		max-width: 620px;
+		border-radius: 12px;
+		margin: auto;
+		@include responsive(630px){
+			font-size: 13px;
+		}
+		.card-content{
+			@include responsive(500px){
+				padding: 12px;
+			}
+			.col{
+				padding: 0 !important;
+			}
+		}
+		h3{
+			font-size: 1.3em;
+			color: $dark;
+			margin: 0;
+			margin-block-end: 1em;
+			font-weight: 500;
+			@include responsive(500px){
+				margin-block-end: 6px;
+			}
+		}
+		p{
+			font-size: 1em;
+			color: #666;
+			margin: 0;
+		}
+		button{
+			@include button;
+			background-color: $red;
+			color: #fff !important;
+			margin-block-start: 1em;
+			@include responsive(500px){
+				margin-block-start: 6px;
+			}
+
+		}
+		.circle{
+			img{
+				@include image;
+			}
+			margin-right: 1rem;
+			@include responsive(400px){
+				margin-right: 8px;
+			}
+		}
+		a.collection-item{
+			color: $dark;
+		}
+	}
+	section:not(:last-child){
+		padding-bottom: 0;
+	}
+	.pending{
+		h2.title{
+			@include section-title;
+			display: inline-block;
+			margin-right: 1rem;
+		}
+		progress {
+			display: inline-block;
+			vertical-align: baseline;
+			max-width: 270px;
+			width: 70%;
+			height: 10px;
+			border-radius: 9px;
+			background-color: #f2f2f2;
+			border: 1px solid #a7a7a761;
+			overflow: hidden;
+			color: $red;
+		}
+		progress::-webkit-progress-value {
+			background-color: $red;
+		}
+		progress[value]::-moz-progress-bar { 
+			background-color: $red;
+		}
+
+
+		.card-content{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.images{
+				.circle{
+					height: 80px;
+					width: 80px;
+					display: inline-flex;
+					border: 4px solid #fff;
+					background-color: $white;
+					padding: 1em;
+					border-radius: 50%;
+					img{
+						height: 100%;
+						width: 100%;
+						object-fit: cover;
+					}
+				}
+				@include responsive(520px){
+					display: none;
+				}
+			}
+			p{
+				font-size: 1em;
+				margin: 0;
+				color: #bbb;
+				span{
+					font-weight: bold;
+					color: #666;
+					@include responsive(778px){
+						display: block;
+						text-align: center;
+					}
+					&.price{
+
+						@include price;
+					}
+				}
+			}
+		}
+	}
+	.history{
+		@extend .pending;
+		font-size: 16px;
+		@include responsive(778px){
+			font-size: 13px;
+		}
+		.semi-card{
+			display: flex;
+			align-items: center;
+			.card-image{
+				margin-right: 12px;
+			}
+			img{
+				height: 85px;
+				width: auto;
+				@include responsive(778px){
+					height: 55px;
+				}
+				@include responsive(386px){
+					height: 40px;
+				}
+			}
+			h3.title{
+				@include card-title;
+				margin-top: 0;
+				max-width: 190px;
+				@include responsive(778px){
+					font-size: 12px;
+					height: 27px;
+					max-width: 120px;
+				}
+			}
+		}
+		p{
+			@include font(os);
+		}
+		p.price{
+			@include price;
+		}
+		a.remove{
+			color: #bbb;
+		}
+		td, th {
+			@include responsive(1001.5px){
+				padding: 10px 5px;
+			}
+			@include responsive(486px){
+				padding: 6px 0px;
+				height: 65px;
+			}
+			@include responsive(386px){
+				height: 40px;
+			}			
+		}
+		box-shadow: none;
+		opacity: .6;
+	}
+}
